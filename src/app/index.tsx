@@ -1,5 +1,5 @@
+import Dashboard from "@/features/dashboard/screens/dashboard";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import Dashboard from "./dashboad";
 
 export default function Index() {
   return (
