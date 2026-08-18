@@ -1,9 +1,9 @@
 // import { Text } from "@/components/ui/Text";
 import { Text } from "@/components/ui/Text";
 import { Ionicons } from "@expo/vector-icons";
-import { LinearGradient } from "expo-linear-gradient";
 import { Pressable, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import QuickStart from "../components/QuickStart";
 import WeeklyCard from "../components/WeeklyCard";
 
 export default function Dashboard() {
@@ -47,64 +47,7 @@ export default function Dashboard() {
         </Pressable>
       </View>
 
-      <View className="flex-row gap-2 mt-4">
-        <View className="w-1/2 rounded-3xl p-4 overflow-hidden">
-          <LinearGradient
-            colors={["#dc2626", "#000000"]}
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-            }}
-          />
-
-          <View className="flex-row justify-between items-center">
-            <View className="bg-white/20 rounded-3xl py-2 px-4">
-              <Text className="text-white uppercase text-sm font-bold">
-                4 moves
-              </Text>
-            </View>
-            <View className="bg-white/20 rounded-3xl py-2 px-2">
-              <Ionicons name="play" size={18} color="#fff" />
-            </View>
-          </View>
-
-          <Text className="text-white uppercase text-xl font-extrabold mt-8">
-            Push Day
-          </Text>
-          <Text className="text-white text-sm">Tap to start</Text>
-        </View>
-        <View className="w-1/2 rounded-3xl p-4 overflow-hidden">
-          <LinearGradient
-            colors={["#dc2626", "#000000"]}
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-            }}
-          />
-
-          <View className="flex-row justify-between items-center">
-            <View className="bg-white/20 rounded-3xl py-2 px-4">
-              <Text className="text-white uppercase text-sm font-bold">
-                4 moves
-              </Text>
-            </View>
-            <View className="bg-white/20 rounded-3xl py-2 px-2">
-              <Ionicons name="play" size={18} color="#fff" />
-            </View>
-          </View>
-
-          <Text className="text-white uppercase text-xl font-extrabold mt-8">
-            Push Day
-          </Text>
-          <Text className="text-white text-sm">Tap to start</Text>
-        </View>
-      </View>
+      <QuickStart />
     </View>
   );
 }
