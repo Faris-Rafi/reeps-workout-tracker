@@ -4,7 +4,10 @@ import { LinearGradient } from "expo-linear-gradient";
 import { ColorValue, FlatList, View } from "react-native";
 
 const DUMMY_EXERCISES = [
-  { exercise: "Push Day", color: ["#FF5A5F", "#7A1220"] },
+  {
+    exercise: "Push Day",
+    color: ["#FF5A5F", "#7A1220"],
+  },
   { exercise: "Pull Day", color: ["#3B82F6", "#0F2A6B"] },
   { exercise: "Leg Day", color: ["#22C55E", "#0F4D2A"] },
   { exercise: "Core & Mobility", color: ["#F59E0B", "#7A3B0A"] },
@@ -14,16 +17,15 @@ export default function QuickStart() {
   return (
     <FlatList
       data={DUMMY_EXERCISES}
-      numColumns={DUMMY_EXERCISES.length / 2}
+      numColumns={2}
       columnWrapperStyle={{ gap: 8 }}
       contentContainerStyle={{ gap: 8 }}
-      className="w-full mt-4"
+      className="mt-4"
+      scrollEnabled={false}
       renderItem={({ item }) => (
-        <View className="flex-1 aspect-[1.3] rounded-3xl py-2 px-4 overflow-hidden">
+        <View className="flex-1 aspect-[1.4] rounded-3xl py-2 px-4 overflow-hidden">
           <LinearGradient
             colors={item.color as [ColorValue, ColorValue, ...ColorValue[]]}
-            start={{ x: 0, y: 0 }}
-            end={{ x: 0, y: 1 }}
             style={{
               position: "absolute",
               top: 0,
@@ -40,13 +42,17 @@ export default function QuickStart() {
                   4 moves
                 </Text>
               </View>
-              <View className="bg-white/20 rounded-3xl py-2 px-2">
+              <View className="bg-white/20 rounded-full py-2 px-2">
                 <Ionicons name="play" size={18} color="#fff" />
               </View>
             </View>
 
             <View>
-              <Text className="text-white text-xl font-extrabold">
+              <Text
+                className="text-white text-xl font-extrabold"
+                numberOfLines={1}
+                ellipsizeMode="tail"
+              >
                 {item.exercise}
               </Text>
               <Text className="text-white text-sm">Tap to start</Text>
